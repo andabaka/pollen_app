@@ -1,0 +1,5 @@
+default:
+  pollen_api_key: !expr Sys.getenv("POLLEN_API_KEY")
+  mongo_url: !expr Sys.getenv("MONGO_URL")
+  mongo_db: !expr Sys.getenv("MONGO_DB")
+  mongo_collection: !expr Sys.getenv("MONGO_COLLECTION")

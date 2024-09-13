@@ -8,8 +8,6 @@
 # These libraries provide essential functionality for data manipulation,
 # UI components, authentication, visualization, and database interactions.
 
-library(config)
-config <- config::get()
 library(shiny)
 library(dplyr)
 library(httr)

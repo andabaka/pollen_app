@@ -1,4 +1,3 @@
-
 library(config)
 
 config <- config::get()
