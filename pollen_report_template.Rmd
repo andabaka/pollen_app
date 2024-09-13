@@ -1,0 +1,123 @@
+---
+title: "Pollen Levels and Symptoms Log"
+author: "User"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    keep_tex: true
+    extra_dependencies: 
+      - booktabs
+      - longtable
+      - array
+      - colortbl
+params:
+  data: NA
+  for_pdf: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(dplyr)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(tidyr)
+library(rmarkdown)
+source("functions.R")  # Source the file containing your custom functions
+
+# Set default font for all plots
+theme_set(theme_minimal(base_family = "sans"))
+```
+
+## Summary
+
+This report provides a detailed analysis of pollen levels and associated allergy symptoms over time. It aims to help you understand the relationships between various types of pollen and your specific allergy symptoms, enabling more effective management of your condition.
+
+## Detailed Pollen and Symptoms Data
+
+The following table presents a comprehensive log of daily pollen levels and symptom intensities:
+
+```{r data_table, echo=FALSE}
+table_data <- params$data %>%
+  select(Date, Location, Grass_Level, Weed_Level, Tree_Level, Symptoms, Symptoms_Severity) %>%
+  rename(
+    "Grass Level" = Grass_Level,
+    "Weed Level" = Weed_Level,
+    "Tree Level" = Tree_Level,
+    "Symptoms Severity" = Symptoms_Severity
+  ) %>%
+  mutate(across(where(is.numeric), round, 2))
+
+kable(table_data, "latex", booktabs = TRUE, longtable = TRUE, 
+      caption = "Detailed Pollen Levels and Symptoms Log",
+      align = c('l', 'l', 'r', 'r', 'r', 'l', 'r'),
+      col.names = c("Date", "Location", "Grass Level", "Weed Level", "Tree Level", "Symptoms", "Symptoms Severity"),
+      row.names = FALSE) %>%
+kable_styling(latex_options = c("repeat_header"),
+              font_size = 8) %>%
+column_spec(1, width = "2cm") %>%  # Date
+column_spec(2, width = "2cm") %>%  # Location
+column_spec(3:5, width = "1.5cm") %>%  # Pollen Levels
+column_spec(6, width = "3cm") %>%  # Symptoms
+column_spec(7, width = "1.5cm")  # Symptoms Severity
+```
+
+This table provides a day-by-day breakdown of:
+
+- **Date and Location**: Helping you identify specific days and places where symptoms were most severe.
+- **Pollen Levels**: Separate columns for grass, weed, and tree pollen levels allow you to pinpoint which types of pollen affect you most.
+- **Symptoms**: A detailed description of the specific symptoms experienced, aiding in pattern recognition.
+- **Symptom Severity**: A numerical representation of how intense your symptoms were each day.
+
+Understanding these daily fluctuations can help you and your healthcare provider make informed decisions about your allergy management strategy.
+
+## Analysis of Average Symptom Intensity
+
+The bar chart below illustrates the average intensity of different allergy symptoms:
+
+```{r bar_chart, fig.width=10, fig.height=6, echo=FALSE}
+generate_bar_chart(params$data, for_pdf = params$for_pdf)
+```
+
+This visualization offers several key insights:
+
+1. **Symptom Comparison**: Easily compare the average intensity of different symptoms, helping you identify which ones are typically most severe for you.
+2. **Treatment Prioritization**: By focusing on the symptoms with the highest average intensity, you and your doctor can prioritize treatments more effectively.
+3. **Potential Triggers**: Symptoms that consistently show high intensity might be linked to specific allergens or environmental factors, warranting further investigation.
+
+Remember that while these are averages, your day-to-day experience may vary. It's important to consider both the average intensities and the daily fluctuations shown in the previous table.
+
+## Pollen Levels and Symptom Intensity Trends Over Time
+
+The multi-line chart below illustrates the trends of pollen levels and symptom intensity across the recorded period:
+
+```{r multi_line_chart, fig.width=10, fig.height=6, echo=FALSE}
+generate_multi_line_chart(params$data, for_pdf = params$for_pdf)
+```
+
+This chart is a powerful tool for understanding the dynamic relationship between pollen levels and your symptoms:
+
+1. **Temporal Patterns**: Observe how pollen levels for different plant types (grass, weed, tree) change over time. This can help you anticipate high-risk periods.
+2. **Symptom Correlation**: The line representing average symptom intensity allows you to see how closely your symptoms correlate with changes in pollen levels.
+3. **Lag Effects**: Sometimes, symptoms may peak a day or two after high pollen counts. Look for any consistent delays between pollen spikes and symptom increases.
+4. **Pollen Type Impact**: By comparing your symptom line with different pollen types, you might identify which pollen sources affect you most severely.
+
+## Conclusions and Recommendations
+
+Based on the data presented in this report, consider the following action items:
+
+1. **Identify Primary Triggers**: Use the multi-line chart to determine which type(s) of pollen correlate most strongly with your symptoms. This knowledge can help you take targeted preventive measures.
+
+2. **Symptom Management**: Focus on managing the symptoms that show the highest average intensity in the bar chart. Discuss specific treatments for these symptoms with your allergist.
+
+3. **Seasonal Preparation**: Use the temporal patterns observed in the multi-line chart to prepare for high-risk periods. Consider starting preventive medications before these periods begin.
+
+4. **Environmental Control**: On days with high pollen counts for your problem allergens, consider staying indoors, keeping windows closed, and using air purifiers.
+
+5. **Tracking Improvements**: Continue logging your symptoms and comparing them to this baseline report. This will help you and your healthcare provider assess the effectiveness of any new treatments or management strategies.
+
+6. **Consult Your Healthcare Provider**: Share this report with your allergist or primary care physician. The detailed data can help inform decisions about your treatment plan, including the timing and type of interventions.
+
+Remember, while this data provides valuable insights, everyone's allergy experience is unique. Use this report as a tool for discussion with your healthcare provider to develop a personalized allergy management plan.
+
+By continuing to track your symptoms and their correlation with pollen levels, you'll be better equipped to manage your allergies and improve your quality of life during high pollen seasons.

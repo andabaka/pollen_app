@@ -1,0 +1,503 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+/* General styles */
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Add a semi-transparent background image to the body */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* Full-screen background */
+.fullscreen-bg {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Navbar styles */
+.navbar-default {
+  background-color: #EAE3D3;
+  border-color: #EAE3D3;
+  border-radius: 10px;
+  height: 70px;
+  padding: 10px 20px;
+}
+
+/* Active navbar item styles */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: white;
+  background-color: #A6AC8A;
+  border-radius: 15px;
+}
+
+/* Navbar header styles */
+.navbar-header {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar brand styles */
+.navbar-brand {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-brand {
+  color: #A6AC8A !important;
+}
+
+/* Custom navbar styles */
+.navbar-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-custom .navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.navbar-custom .navbar-user-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Button styles */
+#enter_app, #login {
+  background-color: #727763;
+  border-color: #727763;
+  color: white;
+}
+
+#enter_app:hover, #login:hover {
+  background-color: #5a5f4a;
+  border-color: #5a5f4a;
+  color: white;
+}
+
+/* Logout button styles */
+.jumbotron #logout {
+  background-color: #A6AC8A;
+  border-color: #A6AC8A;
+  color: white;
+}
+
+.jumbotron #logout:hover {
+  background-color: #5a5f4a;
+  border-color: #5a5f4a;
+  color: white;
+}
+
+/* Form button styles */
+#submit, #reset, #save_data {
+  border-radius: 3px;
+  background-color: white;
+  border-color: #A6AC8A;
+  color: #777777;
+  font-size: 13px;
+  margin-bottom: 10px; 
+}
+
+/* Unite button styles */
+.bttn-unite {
+    border: 1px solid #A6AC8A;
+    margin-bottom: 10px;
+}   
+
+.bttn-unite.bttn-default:after {
+    background: #A6AC8A;
+}
+
+.bttn-unite.bttn-default:before {
+    background: #A6AC8A;
+}
+
+/* Button container */
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Action button styles */
+#reset_log, #download_csv, #download_pdf {
+  background-color: #A6AC8A;
+  border-color: #A6AC8A;
+  color: white;
+  margin-bottom: 10px;
+}
+
+#reset_log:hover, #download_csv:hover, #download_pdf:hover {
+  background-color: #5a5f4a;
+  border-color: #5a5f4a;
+  color: white;
+}
+
+/* Home page styles */
+.jumbotron {
+  color: white;
+  border-radius: 20px;
+  background-color: rgba(114, 119, 99, 0.4);
+}
+
+/* Login page styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #a6ac8a;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+#username-label, #password-label {
+  color: white;
+}
+
+.login-box h2.text-center.mb-4 {
+  color: white !important;
+}
+
+.login-box .fa-user:before {
+  color: white !important;
+}
+
+/* Map panel styles */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 200px);
+  margin-top: 10px;
+}
+
+#input_panel {
+  background-color: #EAE3D3;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 10px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+#date {
+  width: 300px;
+}
+
+/* Switch styles */
+#switches {
+  margin-top: 15px;
+}
+
+.material-switch > input[type=checkbox]:checked + label.switch:before,
+.material-switch > input[type=checkbox]:checked + label.switch:after {
+  background: #A6AC8A;
+}
+
+/* Draggable panel styles */
+.draggable-panel {
+  position: absolute;
+  left: 20px;
+  top: 500px;
+  width: 300px;
+  max-height: 100%;
+  overflow-y: auto;
+  background-color: #EAE3D3;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+#plant_panel {
+  top: 300px;
+  background-color: #EAE3D3;
+  border-radius: 15px;
+  box-shadow: 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Leaflet styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 30px;
+  background: #EAE3D3;
+}
+
+.leaflet-popup-content {
+  background-color: #EAE3D3;
+}
+
+.leaflet-container.leaflet-touch-drag {
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.leaflet-container {
+    font-family: Quicksand!important;
+}
+
+/* Icon styles */
+.fa-heart-pulse:before, .fa-heartbeat:before,
+.fa-seedling:before, .fa-sprout:before {
+  color: #A6AC8A !important;
+}
+
+.fa-user:before {
+  font-size: 15px;
+  margin-left: 10px;
+  color: #777777;
+}
+
+/* Panel styles */
+.panel-default > .panel-heading {
+  border-color: #EAE3D3;
+  background-color: #EAE3D3;
+}
+
+.panel-default {
+  margin-top: 30px;
+}
+
+.panel-title {
+  color: #A6AC8A;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* DataTable styles */
+table.dataTable tbody tr.selected > *,
+table.dataTable tbody tr.selected:hover > * {
+  box-shadow: inset 0 0 0 9999px #414a37 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background: #A6AC8A !important;
+}
+
+/* Form styles */
+input:focus, textarea:focus, select:focus {
+  border-color: white !important;
+}
+
+/* Jumbotron styles */
+.jumbotron.p-4 {
+  color: #777777 !important;
+  margin-top: 20px !important;
+  background-color: #eae3d387 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron {
+  color: #777777 !important;
+  margin-top: 20px !important;
+  background-color: rgba(234, 227, 211, 0.53) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 2rem 1rem;
+}
+
+.jumbotron.text-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.jumbotron.text-center .fa-seedling:before {
+  color: white !important; 
+}
+
+.jumbotron h1 {
+  color: #777777;
+  font-weight: bold;
+}
+
+.jumbotron h2 {
+  color: #777777;
+  text-align: left;
+  margin-top: 15px;
+}
+
+.jumbotron p {
+  color: #777777;
+  font-size: 30px;
+}
+
+/* Start Tour button */
+#start_tour {
+  background-color: #A6AC8A;
+  border-color: #A6AC8A;
+  color: white;
+}
+
+#start_tour:hover {
+  background-color: #949988; 
+  border-color: #949988;
+}
+
+/* Plant glossary styles */
+#plant_image img {
+  border-radius: 15px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+#plant_gloss h3 {
+  font-size: 25px;
+}
+
+#plant_gloss ul {
+  font-size: 15px;
+}
+
+#plant_gloss li {
+  margin-bottom: 10px;
+}
+
+/* Dropdown styles */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:focus,
+.dropdown-menu > .active > a:hover {
+  background-color: #A6AC8A!important;
+}
+
+/* User controls styles */
+.user-controls {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-controls .btn-sm {
+  margin-left: 10px;
+}
+
+.user-icon {
+  margin-right: 5px;
+}
+
+.user-controls > * {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Intro.js styles */
+.introjs-progressbar {
+    background-color: #A6AC8A!important;
+}  
+
+.introjs-progress {
+    background-color: white!important;
+}
+  
+.introjs-tooltipReferenceLayer * {
+    font-family: Quicksand!important;
+    color: #777777;
+}
+
+.introjs-tooltip {
+    background-color: #EAE3D3!important;
+}
+
+.introjs-bullets ul li a.active {
+    background: #A6AC8A!important;
+}
+
+.introjs-bullets ul li a {
+    background: white!important;
+}
+
+.introjs-skipbutton {
+    color: #A6AC8A!important;
+}
+
+/* Alert styles */
+.alert-info {
+    color: #777777!important;
+    background-color: #EAE3D3!important;
+    border-color: #EAE3D3!important;
+    font-family: Quicksand!important;
+    font-style: italic!important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5)!important;
+}
+
+.panel-default {
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5)!important;
+}
+
+/* Range Slider styles */
+.irs--shiny .irs-bar {
+    border-top: 1px solid #A6AC8A!important;
+    border-bottom: 1px solid #A6AC8A!important;
+    background: #A6AC8A!important;
+}
+
+.irs-single {
+    background-color: #A6AC8A!important;
+}
+
+/* Symptoms container styles */
+#symptoms-container .form-group {
+  display: flex!important;
+  gap: 20px!important;
+}
+
+/* Save data with symptoms button styles */
+#save_data_with_symptoms {
+  background-color: #A6AC8A;
+  border-color: #A6AC8A;
+  color: white;
+}
+
+#save_data_with_symptoms:hover {
+  background-color: #5a5f4a;
+  border-color: #5a5f4a;
+  color: white;
+}
+
+/* Modal dismiss button styles */
+.btn[data-dismiss="modal"] {
+  background-color: #A6AC8A;
+  border-color: #A6AC8A;
+  color: white;
+}
+
+.btn[data-dismiss="modal"]:hover {
+  background-color: #5a5f4a;
+  border-color: #5a5f4a;
+  color: white;
+} 
