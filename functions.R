@@ -1088,7 +1088,7 @@ create_about_tab_content <- function() {
         p(
           "The background image used in this application is 'Pine Tree Path at Varengeville' by Claude Monet. This artwork is in the public domain and was sourced from:",
           tags$a(
-            href = "https://www.wikiart.org/en/claude-monet/pine-tree-path-at-varengeville-1882", 
+            href = "https://www.wikiart.org/en/", 
             target = "_blank",
             class = "custom-link",
             "WikiArt.org - Claude Monet"
