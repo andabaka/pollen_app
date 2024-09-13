@@ -1118,7 +1118,7 @@ create_about_tab_content <- function() {
         h4("Source Code", style = "font-size: 20px; font-weight: bold;"),
         p("The source code for the Pollen App is freely available on GitHub:", style = "font-size: 18px;"),
         div(class = "text-center",
-            tags$a(href = "https://github.com/yourusername/pollen-app", 
+            tags$a(href = "https://github.com/andabaka/pollen_app", 
                    target = "_blank",
                    icon("github"), 
                    "View Source Code on GitHub",

@@ -3,9 +3,8 @@
 ![Alt text](images/image.png)(https://mandabaka.shinyapps.io/pollen_app/)
 
 login credentials
-Username: user2, Password: pass2
-Username: user3, Password: pass3
-
+Username: user2; user3
+Password: pass2; pass3
 
 ## Overview
 
@@ -37,7 +36,7 @@ Allergen Information: Learn about cross-reactions and potential food allergies r
 Personalized Advice: Receive tailored health recommendations based on current pollen levels and your logged symptoms.
 Preventive Measures: Get suggestions for minimizing allergy symptoms and planning outdoor activities.
 
-## PDF Reports
+## 5. PDF Reports
 
 Data Visualization: Generate detailed PDF reports with interactive charts and graphs.
 Symptom Analysis: View a breakdown of your symptoms over time, correlated with pollen levels.
@@ -46,7 +45,7 @@ Shareable Format: Ideal for sharing with healthcare providers or for personal re
 
 The PDF Report feature transforms your raw data into actionable insights, helping you and your healthcare providers make informed decisions about your allergy management strategy.
 
-### 5. User-Friendly Interface
+### 6. User-Friendly Interface
 
 Intuitive Design: Easy-to-navigate tabs for different features.
 Responsive Layout: Optimized for both desktop and mobile viewing.
@@ -102,7 +101,7 @@ App features an interactive tutorial powered by Intro.js:
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/yourusername/pollen-app.git
+git clone https://github.com/andabaka/pollen_app
 2. Install required R packages:
 install.packages(c("shiny", "dplyr", "httr", "jsonlite", "leaflet", "ggplot2", "plotly", "mongolite"))
 3. Set up environment variables for API keys and database connections.
@@ -120,8 +119,8 @@ install.packages(c("shiny", "dplyr", "httr", "jsonlite", "leaflet", "ggplot2", "
 
 You can use the following login credentials:
 
-Username: user2, Password: pass2
-Username: user3, Password: pass3
+Username: user2; user3
+Password: pass2; pass3
 
 
 ## Contributing
@@ -140,4 +139,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 4. [Intro.js](https://introjs.com/) for interactive tutorial
 
 ## Contact
+
 For any queries or support, please contact marijanazunic@gmail.com
